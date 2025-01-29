@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres
+    container_name: database-container
+    environment:
+      POSTGRES_PASSWORD: blablabla
+      POSTGRES_USER: blablabla
+      POSTGRES_DB: DataSetInsuranceClient
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+  data-importer:
+    image: drisschammi10/data-importer:v1
+    container_name: data-importer-container
+    depends_on:
+      - postgres
+    env_file:
+      - ./.env
+    restart: "no"
+
+  app:
+    image: drisschammi10/springboot-data-analysis:v1
+    container_name: spring-boot
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/DataSetInsuranceClient
+      SPRING_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      SPRING_DATASOURCE_USERNAME: blablabla
+      SPRING_DATASOURCE_PASSWORD: blablabla
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+    depends_on:
+      - data-importer
