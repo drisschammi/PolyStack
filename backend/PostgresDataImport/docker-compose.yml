@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres
+    container_name: database-container
+    environment:
+      POSTGRES_PASSWORD: blablabla
+      POSTGRES_USER: blablabla
+      POSTGRES_DB: DataSetInsuranceClient
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+  data-importer:
+    build: .
+    container_name: data-importer-container
+    image: drisschammi10/data-importer:v1
+    depends_on:
+      - postgres
+    env_file:
+      - ./.env
+    restart: "no"
