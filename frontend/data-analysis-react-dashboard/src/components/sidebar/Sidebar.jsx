@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import {
-  MdOutlineClose,
+  MdOutlineClose, MdOutlineGridView
 } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom"; // Import useLocation
 import "./Sidebar.scss";
@@ -42,6 +42,17 @@ const Sidebar = () => {
       <div className="sidebar-body">
         <div className="sidebar-menu">
           <ul className="menu-list">
+            <li className="menu-item">
+              <Link
+                to="/django"
+                className={`menu-link ${isActive("/django") ? "active" : ""}`} // Apply "active" class based on URL
+              >
+                <span className="menu-link-icon">
+                  <MdOutlineGridView size={18} />
+                </span>
+                <span className="menu-link-text">Dashboard - Django</span>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

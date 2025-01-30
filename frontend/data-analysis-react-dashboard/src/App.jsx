@@ -8,6 +8,7 @@ import SunIcon from "./assets/icons/sun.svg";
 import BaseLayout from "./layout/BaseLayout";
 
 import DatasetDashboardScreen from "./screens/dataset/DatasetScreen";
+import DjangoDashboardScreen from "./screens/djangoDashboard/DjangoDashboardScreen";
 
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route element={<BaseLayout />}>
             <Route path="/" element={<DatasetDashboardScreen />} />
+            <Route path="/django" element={<DjangoDashboardScreen />} />
           </Route>
         </Routes>
         <button
