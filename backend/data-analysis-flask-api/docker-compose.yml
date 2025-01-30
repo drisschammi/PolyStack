@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres
+    container_name: database-container
+    environment:
+      POSTGRES_PASSWORD: blablabla
+      POSTGRES_USER: blablabla
+      POSTGRES_DB: DataSetInsuranceClient
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+  data-importer:
+    image: drisschammi10/data-importer:v1
+    container_name: data-importer-container
+    depends_on:
+      - postgres
+    env_file:
+      - ./.env
+    restart: "no"
+
+  flask-app:
+    image: drisschammi10/flask-data-analysis:v1
+    container_name: flask-container
+    depends_on:
+      - data-importer
+    env_file:
+      - ./.env
+    ports:
+      - "5000:5000"
