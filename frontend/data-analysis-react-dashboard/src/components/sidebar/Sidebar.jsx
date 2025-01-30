@@ -82,6 +82,19 @@ const Sidebar = () => {
               </Link>
             </li>
 
+            {/* Spring Boot */}
+            <li className="menu-item">
+              <Link
+                to="/springboot"
+                className={`menu-link ${isActive("/springboot") ? "active" : ""}`} // Apply "active" class based on URL
+              >
+                <span className="menu-link-icon">
+                  <MdOutlineGridView size={18} />
+                </span>
+                <span className="menu-link-text">Dashboard - Spring Boot</span>
+              </Link>
+            </li>
+
           </ul>
         </div>
       </div>

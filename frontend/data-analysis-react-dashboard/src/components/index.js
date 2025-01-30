@@ -4,3 +4,4 @@ export { default as AreaTable } from "./dashboard/dataset/AreaTable";
 export { default as DjangoDashboard } from "./dashboard/django/DjangoDashboard";
 export { default as FlaskDashboard } from "./dashboard/flask/FlaskDashboard";
 export { default as NodeDashboard } from "./dashboard/node/NodeDashboard";
+export { default as SpringBootDashboard } from "./dashboard/springboot/SpringBootDashboard";
