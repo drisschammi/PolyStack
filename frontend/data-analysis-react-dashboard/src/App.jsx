@@ -12,6 +12,7 @@ import DjangoDashboardScreen from "./screens/djangoDashboard/DjangoDashboardScre
 import FlaskDashboardScreen from "./screens/flaskDashboard/FlaskDashboardScreen";
 import NodeDashboardScreen from "./screens/nodeDashboard/NodeDashboardScreen";
 import SpringBootDashboardScreen from "./screens/springbootDashboard/SpringBootDashboardScreen";
+import { PageNotFound } from "./screens";
 
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -34,6 +35,7 @@ function App() {
             <Route path="/flask" element={<FlaskDashboardScreen />} />
             <Route path="/node" element={<NodeDashboardScreen />} />
             <Route path="/springboot" element={<SpringBootDashboardScreen />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
         <button
