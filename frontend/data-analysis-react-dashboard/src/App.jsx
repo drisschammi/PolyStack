@@ -10,6 +10,7 @@ import BaseLayout from "./layout/BaseLayout";
 import DatasetDashboardScreen from "./screens/dataset/DatasetScreen";
 import DjangoDashboardScreen from "./screens/djangoDashboard/DjangoDashboardScreen";
 import FlaskDashboardScreen from "./screens/flaskDashboard/FlaskDashboardScreen";
+import NodeDashboardScreen from "./screens/nodeDashboard/NodeDashboardScreen";
 
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" element={<DatasetDashboardScreen />} />
             <Route path="/django" element={<DjangoDashboardScreen />} />
             <Route path="/flask" element={<FlaskDashboardScreen />} />
+            <Route path="/node" element={<NodeDashboardScreen />} />
           </Route>
         </Routes>
         <button

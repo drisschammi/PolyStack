@@ -69,6 +69,19 @@ const Sidebar = () => {
               </Link>
             </li>
 
+            {/* Node */}
+            <li className="menu-item">
+              <Link
+                to="/node"
+                className={`menu-link ${isActive("/node") ? "active" : ""}`} // Apply "active" class based on URL
+              >
+                <span className="menu-link-icon">
+                  <MdOutlineGridView size={18} />
+                </span>
+                <span className="menu-link-text">Dashboard - Node</span>
+              </Link>
+            </li>
+
           </ul>
         </div>
       </div>
