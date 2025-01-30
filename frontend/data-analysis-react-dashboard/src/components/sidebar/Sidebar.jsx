@@ -42,6 +42,8 @@ const Sidebar = () => {
       <div className="sidebar-body">
         <div className="sidebar-menu">
           <ul className="menu-list">
+
+            {/* Django */}
             <li className="menu-item">
               <Link
                 to="/django"
@@ -53,6 +55,20 @@ const Sidebar = () => {
                 <span className="menu-link-text">Dashboard - Django</span>
               </Link>
             </li>
+
+            {/* Flask */}
+            <li className="menu-item">
+              <Link
+                to="/flask"
+                className={`menu-link ${isActive("/flask") ? "active" : ""}`} // Apply "active" class based on URL
+              >
+                <span className="menu-link-icon">
+                  <MdOutlineGridView size={18} />
+                </span>
+                <span className="menu-link-text">Dashboard - Flask</span>
+              </Link>
+            </li>
+
           </ul>
         </div>
       </div>

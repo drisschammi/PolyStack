@@ -1,0 +1,30 @@
+.flask-dashboard {
+    padding: 20px;
+
+    .dashboard-links {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        .dashboard-link {
+            padding: 10px 15px;
+            border-radius: 8px;
+            background-color: var(--secondary-color);
+            color: var(--side-text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--default-transition);
+
+            &:hover {
+                background-color: #197A56;
+                color: var(--light-color);
+            }
+
+            &.active {
+                background-color: var(--primary-color);
+                color: var(--light-color);
+                box-shadow: 0px 0px 4px rgba(71, 91, 232, 0.04);
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+.content-area-charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    @media (max-width: 992px) {
+        grid-template-columns: 100%;
+    }
+}
+
+// Pie chart
+.pie-chart {
+    background-color: #F6F6F6;
+    padding: 16px 16px 6px 16px;
+    border-radius: 5px;
+    box-shadow: var(--light-shadow1);
+    position: relative;
+
+    @media (max-width: 768px) {
+        padding: 12px;
+    }
+
+    .pie-chart-wrapper {
+        width: 100%;
+        height: 240px;
+
+        // recharts customization
+        .recharts-wrapper {
+            @media (max-width: 1400px) {
+                margin-left: -10px;
+            }
+        }
+    }
+
+    .pie-chart-info {
+        margin-bottom: 32px;
+    }
+
+    .pie-chart-title {
+        margin-bottom: 12px;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-color-inverted);
+    }
+
+    .chart-info-data {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+    }
+
+    .info-data-value {
+        color: var(--xl-text-color);
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .info-data-text {
+        display: flex;
+        align-items: center;
+        column-gap: 3px;
+        color: var(--green-color);
+    }
+
+    // customization of recharts - pie chart
+    .recharts-default-legend {
+        position: absolute;
+        top: -60px;
+        right: 0;
+    }
+
+    .recharts-tooltip-label {
+        color: var(--text-color-inverted);
+        font-size: 14px;
+        font-weight: 600;
+    }
+}
+
+// Pie chart cell colors (for PieChart segments)
+.pie-chart-cell {
+    fill: #8884d8; // Default color for each sector
+    transition: fill 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
