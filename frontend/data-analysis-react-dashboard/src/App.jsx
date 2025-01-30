@@ -7,6 +7,8 @@ import MoonIcon from "./assets/icons/moon.svg";
 import SunIcon from "./assets/icons/sun.svg";
 import BaseLayout from "./layout/BaseLayout";
 
+import DatasetDashboardScreen from "./screens/dataset/DatasetScreen";
+
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   // adding dark-mode class if the dark mode is set on to the body tag
@@ -23,6 +25,7 @@ function App() {
       <Router>
         <Routes>
           <Route element={<BaseLayout />}>
+            <Route path="/" element={<DatasetDashboardScreen />} />
           </Route>
         </Routes>
         <button
