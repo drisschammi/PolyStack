@@ -1,5 +1,7 @@
 import cors from "cors";
 import express from 'express';
+import coverageRoutes from './src/routes/analysisRoutes.js';
+import { errorHandler, notFound } from "./src/middleware/errorHandler.js";
 
 const app = express();
 
@@ -7,10 +9,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Basic "Hello World" endpoint
-app.get('/', (req, res) => {
-    res.send('Hello hassan!');
-});
+// Routes
+app.use('/api/v1', coverageRoutes);
+
+// Error handling middleware
+app.use(notFound);
+app.use(errorHandler);
 
 // Server setup
 const PORT = process.env.PORT || 3000;
