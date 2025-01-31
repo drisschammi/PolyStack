@@ -1,0 +1,81 @@
+services:
+  postgres:
+    image: postgres
+    container_name: database-container
+    environment:
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_DB: ${PG_DATABASE}
+    ports:
+      - "5433:5432"
+    restart: unless-stopped
+
+  data-importer:
+    image: drisschammi10/data-importer:v1
+    container_name: data-importer-container
+    depends_on:
+      - postgres
+    env_file:
+      - ./.env
+    restart: "no"
+
+  django-app:
+    image: drisschammi10/django-data-analysis:v1
+    container_name: django-container
+    depends_on:
+      - data-importer
+    env_file:
+      - ./.env
+    ports:
+      - "8000:8000"
+
+  flask-app:
+    image: drisschammi10/flask-data-analysis:v1
+    container_name: flask-container
+    depends_on:
+      - data-importer
+    env_file:
+      - ./.env
+    ports:
+      - "5000:5000"
+
+  node-app:
+    image: drisschammi10/node-data-analysis:v1
+    container_name: node-container
+    depends_on:
+      - data-importer
+    env_file:
+      - ./.env
+    ports:
+      - "3000:3000"
+
+  springboot-app:
+    image: drisschammi10/springboot-data-analysis:v1
+    container_name: spring-boot-container
+    depends_on:
+      - data-importer
+    env_file:
+      - ./.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${PG_HOST}:${PG_PORT}/${PG_DATABASE}
+      SPRING_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      SPRING_DATASOURCE_USERNAME: ${PG_USER}
+      SPRING_DATASOURCE_PASSWORD: ${PG_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+    ports:
+      - "8080:8080"
+
+  react-app:
+    image: drisschammi10/react-vite-data-analysis:v1
+    container_name: react-container
+    depends_on:
+      - django-app
+      - flask-app
+      - node-app
+      - springboot-app
+    ports:
+      - "5173:5173"
+    env_file:
+      - ./.env
+    stdin_open: true
+    tty: true
