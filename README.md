@@ -9,7 +9,8 @@ Welcome to the **PolyStack**, a full-stack web app for data analysis and visuali
 
 Check out the video below for a quick demo of **PolyStack** in action, showcasing how the front-end interacts with the back-end to deliver data analysis and visualization:
 
-<iframe src="https://drive.google.com/file/d/1x1S95nYHi75QThox90FkTtj3oqDlXAGy/view?usp=sharing" width="640" height="480"></iframe>
+<img src="https://media-hosting.imagekit.io//02399b8c345f4d41/PolyStack-v2.gif?Expires=1833188687&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=B7LVIOJSY~87X7FC7KLiRNwzBHQIAkeGI30cqLIRDQcE8Vre3YFZnywoOB72GME8hh~6P1Xk43KrA1H-AKmQIaw1CBBZy1nwy6d~1juHq9iyg1DeSzxLkvAOFb5sp0nCgorGi1~XnsStMdwOaSgf38xJIcYwEj2PRKAU9~ai8XOaJZVhkZgUwDrWfmFWlb-y6Rhx0ovXcPpymQjABNEx7rtTviMxva3kJLeXo6afbCAYKJwoIbcGyP2uRmOleidc73bzIIguX9-XPb97xetzkGtiof85yq-X0m04fortYCrdJbiXTBwexOY1zbc5xVqoFe-5Mazqdr3LQtiMN5yqjA__" height="500px" width="560px" />
+[Watch the video](https://drive.google.com/file/d/1x1S95nYHi75QThox90FkTtj3oqDlXAGy/view?usp=sharing)
 
 ---
 
@@ -25,7 +26,7 @@ Check out the video below for a quick demo of **PolyStack** in action, showcasin
 ![React](https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black) ![Vite](https://img.shields.io/badge/Vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)  
 
 ### Common Tools:
-![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Swagger](https://img.shields.io/badge/Swagger-%2385EA2D.svg?style=for-the-badge&logo=swagger&logoColor=black) ![SQLite](https://img.shields.io/badge/SQLite-%23003B57.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Swagger](https://img.shields.io/badge/Swagger-%2385EA2D.svg?style=for-the-badge&logo=swagger&logoColor=black) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ---
 
